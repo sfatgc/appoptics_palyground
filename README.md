@@ -2,6 +2,10 @@
 
 Sets up dashboard, and some charts in your AppOptics account
 
+## Tests missing
+
+Didn't realized quickly how to mock AppOptics API calls, so tests missing here.
+
 ## Usage
 
 ```bash
