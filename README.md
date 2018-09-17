@@ -15,5 +15,5 @@ To configure charts edit `conf/charts.yaml`
 To setup charts:
 
 ```
-./submit.py -C
+./submit.py <API token> -C
 ```
