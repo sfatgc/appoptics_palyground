@@ -1,0 +1,31 @@
+---
+- name:    Average Response Time
+  type:    line
+  streams:
+    - color:            '#88FF99'
+      name:             Average Response Time
+      metric:           sample_ms
+- name:    Probes Per Minute Rate
+  type:    line
+  streams:
+    - color:            '#FF5599'
+      name:             Probes Per Minute (way one)
+      composite:        'sum(s("sample_ms",{}, {function: "count", period: "60"}))'
+    - color:            '#9955FF'
+      name:             Probes Per Minute (way two)
+      metric:           sample_ms
+      group_function:   sum
+      summary_function: count
+      period:    60
+- name:    Probe Max Time
+  type:    stacked
+  streams:
+    - color:            '#557799'
+      name:             Probe Max Time by Source
+      metric:           sample_ms
+      group_function':  max
+      tags:
+        - name: source
+          values:
+            - '*'
+          grouped: True
