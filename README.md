@@ -9,7 +9,7 @@ Didn't realized quickly how to mock AppOptics API calls, so tests missing here.
 ## Usage
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 chmod u+x submit.py
 ./submit.py --help
 ```
